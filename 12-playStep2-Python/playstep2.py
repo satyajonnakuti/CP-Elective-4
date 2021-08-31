@@ -33,6 +33,21 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
-def playstep2(hand, dice):
-	# your code goes here
-	pass
+def playstep2(hand,dice):
+    hand = str(hand)
+    dice = str(dice)
+    if len(hand) == len(set(hand)):
+        h=hand[0:1]+dice[-1:]+dice[-2:-1]
+        d=dice[0:2]
+        h1=''.join(sorted(h,reverse=True))
+        return (int(h1),int(d))
+    elif len(hand) != len(set(hand)) and len(str(dice))<=2:
+        h=hand[1:]+dice[-1:]
+        d=dice[0:1]
+        h1=''.join(sorted(h,reverse=True))
+        return (int(h1),int(d))
+    elif len(hand) != len(set(hand)) and len(str(dice))>2:
+        h=hand[1:]+dice[-1:]
+        d=dice[0:2]
+        h1=''.join(sorted(h,reverse=True))
+        return (int(h1),int(d))
