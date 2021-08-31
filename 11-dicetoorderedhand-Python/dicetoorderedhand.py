@@ -12,4 +12,8 @@
 
 def dicetoorderedhand(a, b, c):
 	# your code goes here
-	pass
+    largest=max(a,b,c)
+    smallest=min(a,b,c)
+    
+    middle= (a + b + c)- largest-smallest
+    return largest*100+middle*10+smallest
