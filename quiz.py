@@ -6,8 +6,34 @@
 
 def bestQuiz(l):
     # Your  code goes ehre...
-    pass
+    #pass 
+    count=[0,0,0]
+    avg=[0,0,0]
+    for i in range(len(l)):
+            for j in range(len(l[0])):
+                  if (l[i][j]!=-1):
+                        avg[j]+=l[i][j]
+                        count[j]+=1
+      #print(count)
+      #print(avg)  
+    max=0
+    res=0
+    for j in range(len(l[0])):
+            if count[j]!=0:
+                  avg[j]=avg[j]/count[j]
+            else:
+                  avg[j]=0
+            #print(max,avg[j])      
+            if max<avg[j]:
+                  max=avg[j]
+                  res=j
+      #print (max)
+    if max==0:
+            return None
+    else:
+            return res
 
+  
 def testBestQuiz():
     print('Testing bestQuiz()...', end='')
     a = [ [ 88,  80, 91 ],
