@@ -4,5 +4,17 @@
 # of 3 exist, you should return the empty list. You may not use loops/iteration in this problem. 
 
 def recursion_powersof3ton(n):
-	# Your code goes here
-	pass
+    if(n<=0):
+        return None
+    elif(n==1):
+        return([int(n)])
+    else:
+        return(recurse(n,y=0))
+        
+def recurse(n,y):
+    if(n<y):
+        return([])
+    elif((3**y)<=n):
+        return([3**y]+recurse(n,y+1))
+    else:
+        return([])
